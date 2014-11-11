@@ -779,6 +779,14 @@ class EM_Booking extends EM_Object{
 	}
 	
 	/**
+         * Mark a booking as No Show and save
+         * @return bool
+         */
+        function noshow(){
+                return $this->set_status(8);
+        }        
+
+	/**
 	 * Change the status of the booking. This will save to the Database too. 
 	 * @param int $status
 	 * @return boolean
