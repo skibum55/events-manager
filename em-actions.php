@@ -241,7 +241,7 @@ function em_init_actions() {
 		}elseif( !empty($_REQUEST['event_id']) ){
 			$EM_Event = new EM_Event($_REQUEST['event_id']);
 		}
-		$allowed_actions = array('bookings_approve'=>'approve','bookings_reject'=>'reject','bookings_unapprove'=>'unapprove', 'bookings_delete'=>'delete');
+		$allowed_actions = array('bookings_approve'=>'approve','bookings_reject'=>'reject','bookings_unapprove'=>'unapprove', 'bookings_delete'=>'delete','bookings_noshow'=>'noshow');
 		$result = false;
 		$feedback = '';
 		if ( $_REQUEST['action'] == 'booking_add') {
