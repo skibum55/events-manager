@@ -2,15 +2,15 @@
 //Builds a table of bookings, still work in progress...
 class EM_Bookings_Table{
 	/**
-	 * associative array of collumns that'll be shown in order from left to right
+	 * associative array of columns that'll be shown in order from left to right
 	 * 
-	 * * key - collumn name in the databse, what will be used when searching
-	 * * value - label for use in collumn headers 
+	 * * key - column name in the databse, what will be used when searching
+	 * * value - label for use in column headers 
 	 * @var array
 	 */
 	public $cols = array('user_name','event_name','booking_spaces','booking_status','booking_price','actions');
 	/**
-	 * Asoociative array of available collumn keys and corresponding headers, which will be used to display this table of bookings
+	 * Asoociative array of available column keys and corresponding headers, which will be used to display this table of bookings
 	 * @var unknown_type
 	 */
 	public $cols_template = array();
@@ -71,7 +71,7 @@ class EM_Bookings_Table{
 		$this->offset = ( $this->page > 1 ) ? ($this->page-1)*$this->limit : 0;
 		$this->scope = ( !empty($_REQUEST['scope']) && array_key_exists($_REQUEST ['scope'], em_get_scopes()) ) ? $_REQUEST ['scope']:get_option('dbem_default_bookings_search','future');
 		$this->status = ( !empty($_REQUEST['status']) && array_key_exists($_REQUEST['status'], $this->statuses) ) ? $_REQUEST['status']:get_option('dbem_default_bookings_search','needs-attention');
-		//build template of possible collumns
+		//build template of possible columns
 		$this->cols_template = apply_filters('em_bookings_table_cols_template', array(
 			'user_name'=>__('Name','dbem'),
 			'first_name'=>__('First Name','dbem'),
@@ -101,13 +101,13 @@ class EM_Bookings_Table{
 			$this->cols_template = array_merge( $this->cols_template, $this->cols_tickets_template);
 		}
 		$this->cols_template['actions'] = __('Actions','dbem');
-		//calculate collumns if post requests		
+		//calculate columns if post requests		
 		if( !empty($_REQUEST ['cols']) && !is_array($_REQUEST ['cols']) ){
 			$this->cols = explode(',',$_REQUEST['cols']);
 		}elseif( !empty($_REQUEST ['cols']) ){
 			$this->cols = $_REQUEST['cols'];
 		}
-		//load collumn view settings
+		//load column view settings
 		if( $this->get_person() !== false ){
 			$this->cols_view = $this->get_person();
 		}elseif( $this->get_ticket() !== false ){
@@ -115,7 +115,7 @@ class EM_Bookings_Table{
 		}elseif( $this->get_event() !== false ){
 			$this->cols_view = $this->get_event();
 		}
-		//save collumns depending on context and user preferences
+		//save columns depending on context and user preferences
 		if( empty($_REQUEST['cols']) ){
 			if(!empty($this->cols_view) && is_object($this->cols_view)){
 				//check if user has settings for object type
