@@ -291,6 +291,15 @@ class EM_Bookings extends EM_Object implements Iterator{
 	}
 	
 	/**
+         * Will mark as no show all supplied booking ids, which must be in the form of a numeric array or a single number.
+         * @param array|int $booking_ids
+         * @return boolean
+         */
+        function noshow( $booking_ids ){
+                return $this->set_status(8, $booking_ids);
+        }
+	
+	/**
 	 * @param int $status
 	 * @param array|int $booking_ids
 	 * @return bool
