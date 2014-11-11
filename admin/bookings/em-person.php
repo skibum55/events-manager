@@ -110,12 +110,14 @@ function em_bookings_person_table(){
 										$approve_url = em_add_get_params($_SERVER['REQUEST_URI'], array('action'=>'bookings_approve', 'booking_id'=>$EM_Booking->booking_id));
 										$reject_url = em_add_get_params($_SERVER['REQUEST_URI'], array('action'=>'bookings_reject', 'booking_id'=>$EM_Booking->booking_id));
 										$delete_url = em_add_get_params($_SERVER['REQUEST_URI'], array('action'=>'bookings_delete', 'booking_id'=>$EM_Booking->booking_id));
+										$noshow_url = em_add_get_params($_SERVER['REQUEST_URI'], array('action'=>'bookings_noshow', 'booking_id'=>$EM_Booking->booking_id));
 										?>
 										<?php if( get_option('dbem_bookings_approval') && ($EM_Booking->booking_status == 0 ) ): ?>
 										<a class="em-bookings-approve" href="<?php echo $approve_url ?>"><?php _e('Approve','dbem'); ?></a> |
 										<?php endif; ?>
 										<?php if( get_option('dbem_bookings_approval') && $EM_Booking->booking_status == 1 ): ?>
 										<a class="em-bookings-unapprove" href="<?php echo $unapprove_url ?>"><?php _e('Unapprove','dbem'); ?></a> |
+										<a class="em-bookings-noshow" href="<?php echo $noshow_url ?>"><?php _e('No Show','dbem'); ?></a> |
 										<?php endif; ?>
 										<?php if( $EM_Booking->booking_status == 2 ): ?>
 										<a class="em-bookings-approve" href="<?php echo $approve_url ?>"><?php _e('Restore','dbem'); ?></a> |
