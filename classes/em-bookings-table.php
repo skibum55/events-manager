@@ -56,7 +56,8 @@ class EM_Bookings_Table{
 			'cancelled' => array('label'=>__('Cancelled','dbem'), 'search'=>3),
 			'rejected' => array('label'=>__('Rejected','dbem'), 'search'=>2),
 			'needs-attention' => array('label'=>__('Needs Attention','dbem'), 'search'=>array(0)),
-			'incomplete' => array('label'=>__('Incomplete Bookings','dbem'), 'search'=>array(0))
+			'incomplete' => array('label'=>__('Incomplete Bookings','dbem'), 'search'=>array(0)),
+			'No Show' => array('label'=>__('No Show','dbem'), 'search'=>8)
 		);
 		if( !get_option('dbem_bookings_approval') ){
 			unset($this->statuses['pending']);
