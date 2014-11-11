@@ -134,7 +134,8 @@ class EM_Booking extends EM_Object{
 			2 => __('Rejected','dbem'),
 			3 => __('Cancelled','dbem'),
 			4 => __('Awaiting Online Payment','dbem'),
-			5 => __('Awaiting Payment','dbem')
+			5 => __('Awaiting Payment','dbem'),
+			8 => __('No Show','dbem')
 		);
 		$this->compat_keys(); //depricating in 6.0
 		//do some legacy checking here for bookings made prior to 5.4, due to how taxes are calculated
