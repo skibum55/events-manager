@@ -1,5 +1,5 @@
 === Events Manager ===
-Contributors: netweblogic, nutsmuggler
+Contributors: netweblogic, nutsmuggler, skibum55
 Donate link: http://wp-events-plugin.com
 Tags: events, event, event registration, event calendar, events calendar, event management, paypal, registration, ticket, tickets, ticketing, tickets, theme, widget, locations, maps, booking, attendance, attendee, buddypress, calendar, gigs, payment, payments, sports,
 Requires at least: 3.5
